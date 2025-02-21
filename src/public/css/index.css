@@ -1,0 +1,77 @@
+.content {
+    display: flex;
+}
+
+.l-wrapper {
+    margin: 3rem;
+    width: 320px;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+    color: #212121;
+    text-decoration: none;
+}
+
+.card__header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card__title {
+    padding: 1rem 1rem 0;
+    font-size: 1.25rem;
+    order: 1;
+}
+
+.card__thumbnail {
+    margin: 0;
+    order: 0;
+}
+
+.card__image {
+    width: 100%;
+}
+
+.card__body {
+    padding: 1rem;
+}
+
+.card__text {
+    font-size: 0.75rem;
+}
+
+.card__text + .card__text {
+    margin-top: 0.5rem;
+}
+
+.card__text--number {
+    text-align: right;
+}
+
+.card__footer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.card__button {
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card__button--compact {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    background-color: #26a69a;
+    color: #fff;
+    font-weight: bold;
+}
+
+.card__button--compact:hover,
+.card__button--compact:focus {
+    background-color: #80cbc4;
+}

@@ -1,0 +1,25 @@
+.content__message {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.content__message--text {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.content__link {
+    margin-top: 20px;
+}
+
+.content__link-button {
+    padding: 10px;
+    width: 30%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}

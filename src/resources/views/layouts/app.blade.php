@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>アプリケーション名</title>
+    <title>sellfruits</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     @yield('css')
@@ -16,10 +16,13 @@
         <div class="header__inner">
             <div class="header-utilities">
                 <a class="header__logo" href="/">
-                    アプリケーション名
+                    sellfruits
                 </a>
                 <nav>
                     <ul class="header-nav">
+                        <li class="header-nav__item">
+                            <a class="header-nav__link" href="/item/register">出品する</a>
+                        </li>
                         @if (Auth::check())
                         <li class="header-nav__item">
                             <a class="header-nav__link" href="/mypage">マイページ</a>
@@ -29,6 +32,10 @@
                                 @csrf
                                 <button class="header-nav__button">ログアウト</button>
                             </form>
+                        </li>
+                        @else
+                        <li class="header-nav__item">
+                            <a class="header-nav__link" href="/login">ログイン</a>
                         </li>
                         @endif
                     </ul>

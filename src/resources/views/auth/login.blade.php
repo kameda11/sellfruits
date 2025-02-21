@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="login__content">
+<div class="login-form__content">
     <div class="login-form__heading">
         <h2>ログイン</h2>
     </div>

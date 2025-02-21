@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,11 @@ use App\Http\Controllers\AuthController;
 |
 */
 
+Route::get('/', [ItemController::class, 'index'])->name('index');
+Route::get('/item/detail/{id}', [ItemController::class, 'detail'])->name('detail');
+
 Route::middleware('auth')->group(function () {
-    Route::get('/', [AuthController::class, 'index']);
+    Route::get('/item/register', [ItemController::class, 'register'])->name('item.register');
+    Route::post('/item/confirm', [ItemController::class, 'confirm'])->name('item.confirm');
+    Route::post('/item/create', [ItemController::class, 'create'])->name('item.create');
 });
