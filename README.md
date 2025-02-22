@@ -46,32 +46,7 @@ php artisan storage:link
 
 ## ER 図
 
-```mermaid
----
-title: "タイトル"
----
-erDiagram
-    users ||--o{ goods: ""
-
-    users {
-        bigint id PK "ID"
-        varchar name "名称"
-        varchar username "ユーザー名"
-        varchar description "説明"
-        timestamp deleted_at "削除日時"
-        timestamp created_at "作成日時"
-        timestamp updated_at "更新日時"
-    }
-
-    goods {
-        bigint id PK "ID"
-        bigint author_id FK "オーサーID:users.id"
-        varchar goods "商品"
-        timestamp deleted_at "削除日時"
-        timestamp created_at "作成日時"
-        timestamp updated_at "更新日時"
-    }
-```
+<img width="150" src="/sellfruits.drawio.png">
 
 
 ## その他
