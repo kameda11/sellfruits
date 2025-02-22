@@ -47,35 +47,30 @@ php artisan storage:link
 ## ER 図
 
 ```mermaid
+---
+title: "タイトル"
+---
 erDiagram
-  users ||--o{ posts : "1人のユーザーは0以上の投稿を持つ"
-  users ||--o{ comments: "1人のユーザーは0以上のコメントを持つ"
-  posts ||--o{ comments: "1つの投稿は0以上のコメントを持つ"
+    users ||--o{ goods: ""
 
-  users {
-    bigint id PK
-    string name "ユーザー名"
-    timestamp created_at
-    timestamp deleted_at
-  }
+    users {
+        bigint id PK "ID"
+        varchar name "名称"
+        varchar username "ユーザー名"
+        varchar description "説明"
+        timestamp deleted_at "削除日時"
+        timestamp created_at "作成日時"
+        timestamp updated_at "更新日時"
+    }
 
-  posts {
-    bigint id PK
-    references user FK
-    string title "投稿タイトル"
-    text content "投稿内容"
-    timestamp created_at
-    timestamp deleted_at
-  }
-
-  comments {
-    bigint id PK
-    references post FK
-    references user FK
-    text content "コメント内容"
-    timestamp created_at
-    timestamp deleted_at
-  }
+    goods {
+        bigint id PK "ID"
+        bigint author_id FK "オーサーID:users.id"
+        varchar goods "商品"
+        timestamp deleted_at "削除日時"
+        timestamp created_at "作成日時"
+        timestamp updated_at "更新日時"
+    }
 ```
 
 
