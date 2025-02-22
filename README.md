@@ -46,7 +46,25 @@ php artisan storage:link
 
 ## ER 図
 
--   ここに ER 図を載せる
+```mermaid　
+erDiagram
+  users ||--o{ goods
+
+  users {
+    PK "顧客ID"
+    "顧客名"
+    "メールアドレス"
+    "電話番号"
+    
+  }
+
+  goods {
+    PK "商品ID"
+    "顧客ID"
+    "商品ID"
+    "商品個数"
+  }
+
 
 ## その他
 
