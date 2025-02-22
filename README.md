@@ -46,6 +46,7 @@ php artisan storage:link
 
 ## ER 図
 
+```mermaid
 erDiagram
   users ||--o{ posts : "1人のユーザーは0以上の投稿を持つ"
   users ||--o{ comments: "1人のユーザーは0以上のコメントを持つ"
@@ -75,6 +76,7 @@ erDiagram
     timestamp created_at
     timestamp deleted_at
   }
+```
 
 
 ## その他
