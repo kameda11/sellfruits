@@ -1,0 +1,55 @@
+.mypage-form {
+    text-align: center;
+    max-width: 1230px;
+}
+
+.mypage-form__content {
+    margin: 0 auto;
+    padding: 15px 15px;
+    width: 50%;
+}
+
+.mypage-form__heading {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mypage-form__account {
+    margin: 20px;
+    padding: auto;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.mypage-form__email {
+    margin: 20px;
+}
+
+.mypage-form__password {
+    margin: 20px;
+}
+
+.mypage-form__address {
+    margin: 20px;
+}
+
+.mypage-form__listing {
+    margin: 10px;
+    padding: auto;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.mypage-form__inquiry {
+    margin: 10px;
+    padding: auto;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.mypage-form__withdrawal {
+    margin: 10px;
+    padding: auto;
+    font-size: 20px;
+    font-weight: bold;
+}
