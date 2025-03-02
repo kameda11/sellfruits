@@ -20,7 +20,7 @@
                 <p class="card__text--number">&yen; {{number_format($item->price)}}</p>
             </div>
             <div class="card__footer">
-                <p class="card__text"><a href="#" class="card__button card__button--compact">商品の詳細を見る</a></p>
+                <p class="card__text"><a href="/item/detail/{{$item->id}}" method="get" class="card__button card__button--compact">商品の詳細を見る</a></p>
             </div>
 
         </article>

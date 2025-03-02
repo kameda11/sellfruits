@@ -5,8 +5,6 @@
 @endsection
 
 @section('content')
-
-@section('content')
 <div class="mypage-form">
     <div class="mypage-form__content">
         <div class="mypage-form__heading">

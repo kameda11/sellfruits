@@ -22,4 +22,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/item/register', [ItemController::class, 'register'])->name('item.register');
     Route::post('/item/confirm', [ItemController::class, 'confirm'])->name('item.confirm');
     Route::post('/item/create', [ItemController::class, 'create'])->name('item.create');
+    Route::get('mypage', [ItemController::class, 'mypage'])->name('mypage');
+    Route::get('/cart/list', [ItemController::class, 'list'])->name('cart.list'); // カート一覧
+    Route::post('/cart/add', [ItemController::class, 'add'])->name('cart.add'); // 商品をカートに追加
+    Route::post('/cart/remove', [ItemController::class, 'remove'])->name('cart.remove'); // 商品をカートから削除
+    Route::post('/cart/clear', [ItemController::class, 'clear'])->name('cart.clear'); // カートをクリア
 });

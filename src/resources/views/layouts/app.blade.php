@@ -28,6 +28,12 @@
                             <a class="header-nav__link" href="/mypage">マイページ</a>
                         </li>
                         <li class="header-nav__item">
+                            <form class="form" action="/cart/list" method="get">
+                                @csrf
+                                <button class="header-nav__button">買い物かご</button>
+                            </form>
+                        </li>
+                        <li class="header-nav__item">
                             <form class="form" action="/logout" method="post">
                                 @csrf
                                 <button class="header-nav__button">ログアウト</button>
