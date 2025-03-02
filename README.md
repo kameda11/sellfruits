@@ -46,7 +46,7 @@ php artisan storage:link
 
 ## ER 図
 
-<img width="150" src="/diagram.drawio.png">
+![ER図](./sellfruits.png)
 
 
 ## その他

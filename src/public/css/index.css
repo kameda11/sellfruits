@@ -1,9 +1,11 @@
 .content {
     display: flex;
+    float: left;
+    max-width: 100%;
 }
 
 .l-wrapper {
-    margin: 3rem;
+    margin: 1rem;
     width: 320px;
 }
 

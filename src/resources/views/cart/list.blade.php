@@ -12,7 +12,7 @@
     <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    @if(count($items) > 0)
+    @if(count($cart) > 0)
     <table class="table">
         <thead>
             <tr>
@@ -24,7 +24,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($items as $item)
+            @foreach($cart as $item)
             <tr>
                 <td>{{ $item['name'] }}</td>
                 <td>{{ number_format($item['price']) }}円</td>
