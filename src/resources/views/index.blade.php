@@ -16,13 +16,20 @@
                 </figure>
             </div>
             <div class=" card__body">
-                    <p class="card__text">{{$item->detail}}</p>
-                    <p class="card__text--number">&yen; {{number_format($item->price)}}</p>
+                <p class="card__text">{{$item->detail}}</p>
+                <p class="card__text--number">&yen; {{number_format($item->price)}}</p>
             </div>
             <div class="card__footer">
-                <p class="card__text"><a href="/item/detail/{{$item->id}}" method="get" class="card__button card__button--compact">商品の詳細を見る</a></p>
+                <p class="card__text">
+                    <a href="/item/detail/{{$item->id}}" class="card__button card__button--compact">商品の詳細を見る</a>
+                </p>
+                <form action="{{ route('cart.add') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="item_id" value="{{ $item->id }}">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="card__button card__button--add">カートに追加</button>
+                </form>
             </div>
-
         </article>
     </div>
     @endforeach

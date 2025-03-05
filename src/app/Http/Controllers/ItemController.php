@@ -69,10 +69,10 @@ class ItemController extends Controller
 
     public function detail($id)
     {
-        $items = Item::find($id);
-        if (!$items) {
+        $item = Item::find($id);
+        if (!$item) {
             abort(404, '商品が見つかりません');
         }
-        return view('items.detail', compact('items'));
+        return view('items.detail', compact('item'));
     }
 }

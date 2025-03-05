@@ -25,19 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/item/create', [ItemController::class, 'create'])->name('item.create');
     Route::get('mypage', [ItemController::class, 'mypage'])->name('mypage');
     Route::get('/cart/list', [CartController::class, 'list'])->name('cart.list'); // カート一覧
-
-    Route::get('/cart/add', function () {
-        return view('cart.add'); // add.blade.php を表示
-    })->name('cart.add.view');
-    Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add'); // 商品をカートに追加
-
-    Route::get('/cart/remove', function () {
-        return view('cart.remove'); // remove.blade.php を表示
-    })->name('cart.remove.view');
-    Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove'); // 商品をカートから削除
-
-    Route::get('/cart/clear', function () {
-        return view('cart.clear'); // clear.blade.php を表示
-    })->name('cart.clear.view');
-    Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear'); // カートをクリア
+    Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add'); // カートに追加
+    Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove'); // カートから削除
+    Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear'); // カートを空にする
 });
