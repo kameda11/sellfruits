@@ -27,7 +27,7 @@
                     @csrf
                     <input type="hidden" name="item_id" value="{{ $item->id }}">
                     <input type="hidden" name="quantity" value="1">
-                    <button type="submit" class="card__button card__button--add">カートに追加</button>
+                    <button type="submit" class="card__button--add">カートに入れる</button>
                 </form>
             </div>
         </article>

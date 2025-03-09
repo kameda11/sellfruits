@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\User;
 use App\Http\Requests\ItemRequest;
+use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Storage;
 use League\CommonMark\Extension\TaskList\TaskListItemMarkerRenderer;
 
@@ -74,5 +76,45 @@ class ItemController extends Controller
             abort(404, '商品が見つかりません');
         }
         return view('items.detail', compact('item'));
+    }
+
+    // データ編集ページの表示
+    public function edit($id)
+    {
+        $item = User::find($id);
+        if (!$item) {
+            abort(404, 'データが見つかりません');
+        }
+        return view('edit', ['item' => $item]);
+    }
+
+    public function update(UserRequest $request, $id)
+    {
+        \Log::info("updateメソッドが実行されました。ID: {$id}");
+
+        // 現在のログインユーザーを取得
+        $user = User::find($id);
+
+        if (!$user) {
+            \Log::error("ID: {$id} のユーザーが見つかりませんでした。");
+            return redirect()->route('edit', ['id' => $id])->with('error', 'ユーザー情報が見つかりませんでした');
+        }
+
+        \Log::info("更新前のデータ: " . json_encode($user->toArray()));
+
+        // メールアドレスの更新
+        $user->email = $request->input('email');
+
+        // パスワードが入力されていた場合のみ更新
+        if ($request->filled('password')) {
+            $user->password = bcrypt($request->input('password'));
+            \Log::info("パスワードが更新されました。");
+        }
+
+        $user->save();
+
+        \Log::info("更新後のデータ: " . json_encode($user->toArray()));
+
+        return redirect()->route('edit', ['id' => $id])->with('success', '情報を更新しました');
     }
 }

@@ -15,10 +15,14 @@
 }
 
 .mypage-form__account {
-    margin: 20px;
-    padding: auto;
-    font-size: 20px;
+    padding: 15px;
+    font-family: inherit;
+    appearance: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
     font-weight: bold;
+    font-size: 20px;
 }
 
 .mypage-form__email {

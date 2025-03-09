@@ -8,12 +8,13 @@
 <div class="mypage-form">
     <div class="mypage-form__content">
         <div class="mypage-form__heading">
-            <form class="form" action="" method="post">
-                <div class="mypage-form__account">アカウント情報</div>
-                <ul class="mypage-form__email">メールアドレスの変更</ul>
-                <ul class="mypage-form__password">パスワードの変更</ul>
-                <ul class="mypage-form__address">お客様情報の変更</ul>
+            <form class="edit-form" action="{{ route('edit', ['id' => Auth::id()]) }}" method="get">
+                @csrf
+                <button class="mypage-form__account">アカウント情報の更新</button>
             </form>
+            <ul class="mypage-form__email">メールアドレスの変更</ul>
+            <ul class="mypage-form__password">パスワードの変更</ul>
+            <ul class="mypage-form__address">お客様情報の変更</ul>
         </div>
     </div>
     <div class="mypage-form__content">
